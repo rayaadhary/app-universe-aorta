@@ -3,7 +3,7 @@ import { reactive, watch } from 'vue'
 const messages = {
   id: {
     tagline: 'Satu manusia. Satu kehidupan. Satu sistem.',
-    welcome: 'Selamat datang!',
+    welcome: 'Selamat datang',
     registerTitle: 'Belum punya akun AORTA?',
     registerDesc: 'Daftar untuk mulai menggunakan.',
     registerCta: 'Daftar',
@@ -18,11 +18,11 @@ const messages = {
   },
   en: {
     tagline: 'One person. One life. One system.',
-    welcome: 'Welcome!',
-    registerTitle: 'No account yet?',
+    welcome: 'Welcome',
+    registerTitle: 'No account yet AORTA?',
     registerDesc: 'Register now to start using AORTA.',
     registerCta: 'Register',
-    loginTitle: 'Already have an account?',
+    loginTitle: 'Already have an account AORTA?',
     loginDesc: 'Sign in to continue to your account.',
     loginCta: 'Sign in',
     language: 'Language',
