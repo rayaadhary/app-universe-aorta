@@ -110,7 +110,7 @@ import { prefs, t } from "./prefs";
                 <!-- Button -->
                 <button
                   type="button"
-                  class="mt-4 flex w-full items-center justify-center gap-1.5 rounded-full bg-brand py-2.5 px-2 text-xs sm:text-sm font-semibold tracking-wider text-white uppercase shadow-lg shadow-teal-500/20 transition hover:brightness-105 focus-visible:ring-2 focus-visible:ring-brand-to active:brightness-95"
+                  class="mt-4 flex w-full items-center justify-center gap-1.5 rounded-full bg-brand py-2.5 px-2 text-xs sm:text-sm font-semibold tracking-wider text-white capitalize shadow-lg shadow-teal-500/20 transition hover:brightness-105 focus-visible:ring-2 focus-visible:ring-brand-to active:brightness-95"
                 >
                   <span class="truncate">{{ t("registerCta") }}</span>
                 </button>
@@ -152,7 +152,7 @@ import { prefs, t } from "./prefs";
                 <!-- Button -->
                 <button
                   type="button"
-                  class="mt-4 flex w-full items-center justify-center gap-1.5 rounded-full bg-brand py-2.5 px-2 text-xs sm:text-sm font-semibold tracking-wider text-white uppercase shadow-lg shadow-teal-500/20 transition hover:brightness-105 focus-visible:ring-2 focus-visible:ring-brand-to active:brightness-95"
+                  class="mt-4 flex w-full items-center justify-center gap-1.5 rounded-full bg-brand py-2.5 px-2 text-xs sm:text-sm font-semibold tracking-wider text-white capitalize shadow-lg shadow-teal-500/20 transition hover:brightness-105 focus-visible:ring-2 focus-visible:ring-brand-to active:brightness-95"
                 >
                   <span class="truncate">{{ t("loginCta") }}</span>
                 </button>
