@@ -6,7 +6,7 @@ import { prefs, t } from "./prefs";
 
 <template>
     <div class="bg-page relative min-h-dvh overflow-hidden font-sans">
-        <!-- <svg width="0" height="0" class="absolute" aria-hidden="true">
+        <svg width="0" height="0" class="absolute" aria-hidden="true">
             <defs>
                 <linearGradient
                     id="brand"
@@ -21,7 +21,7 @@ import { prefs, t } from "./prefs";
                     <stop offset="1" stop-color="var(--color-brand-to)" />
                 </linearGradient>
             </defs>
-        </svg> -->
+        </svg>
 
         <svg
             class="pointer-events-none absolute -top-24 -left-20 w-[400px]"
