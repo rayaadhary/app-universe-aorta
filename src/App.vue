@@ -23,35 +23,6 @@ import { prefs, t } from "./prefs";
             </defs>
         </svg>
 
-        <svg
-            class="pointer-events-none absolute -top-24 -left-20 w-[400px]"
-            viewBox="0 0 400 300"
-            fill="none"
-            aria-hidden="true"
-        >
-            <path
-                d="M-20 260C70 250 140 150 210 60C250 8 320-20 400-10"
-                stroke="#8ed3e6"
-                stroke-width="2"
-            />
-            <path
-                d="M30-50C150 0 220 90 240 230"
-                stroke="#cdeef5"
-                stroke-width="1.5"
-            />
-        </svg>
-        <svg
-            class="pointer-events-none absolute -bottom-28 -right-24 w-[380px]"
-            viewBox="0 0 380 300"
-            fill="none"
-            aria-hidden="true"
-        >
-            <path
-                d="M420 20C330 50 260 150 240 330"
-                stroke="#c9b8f5"
-                stroke-width="2"
-            />
-        </svg>
 
         <main
             class="relative mx-auto flex min-h-dvh w-full max-w-md flex-col px-6 pt-14 pb-9 text-center"
@@ -63,9 +34,9 @@ import { prefs, t } from "./prefs";
             >
                 AORTA
             </h1>
-            <p class="mt-3 text-[15px] text-muted dark:text-slate-400">
+             <p class="mt-3 text-[15px] text-muted dark:text-slate-400">
                 {{ t("tagline") }}
-            </p>
+            </p> 
 
             <h2
                 class="mt-12 text-[34px] font-bold leading-tight text-ink dark:text-white"
