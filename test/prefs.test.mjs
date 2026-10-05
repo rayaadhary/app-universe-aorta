@@ -30,12 +30,12 @@ assert.ok(!classes.has('dark'), 'theme light -> no html.dark')
 
 prefs.locale = 'en'
 await nextTick()
-assert.equal(t('welcome'), 'Welcome!')
+assert.equal(t('welcome'), 'Welcome')
 assert.equal(store.get('aorta.theme'), 'light', 'theme tersimpan')
 assert.equal(store.get('aorta.lang'), 'en', 'locale tersimpan')
 
 prefs.locale = 'id'
 await nextTick()
-assert.equal(t('welcome'), 'Selamat datang!')
+assert.equal(t('welcome'), 'Selamat datang')
 
 console.log('prefs ok')
