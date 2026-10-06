@@ -11,10 +11,10 @@ const years = Array.from({ length: 90 }, (_, i) => new Date().getFullYear() - i)
     <main
         class="relative mx-auto flex min-h-dvh w-full max-w-md flex-col px-6 pt-12 pb-9 text-center"
     >
-        <div class="flex items-center gap-3">
+        <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
             <svg
                 viewBox="0 0 24 24"
-                class="h-8 w-8 shrink-0"
+                class="h-8 w-8 shrink-0 justify-self-start"
                 fill="none"
                 aria-hidden="true"
             >
@@ -31,12 +31,11 @@ const years = Array.from({ length: 90 }, (_, i) => new Date().getFullYear() - i)
                 />
             </svg>
             <h1
-                class="text-2xl font-bold text-ink dark:text-white"
+                class="text-center text-2xl font-bold text-ink dark:text-white"
             >
                 {{ t("registerHeading") }}
             </h1>
-            <span class="h-px flex-1 bg-slate-200 dark:bg-white/15"></span>
-            <img :src="logo" alt="AORTA" class="h-8 w-auto shrink-0" />
+            <img :src="logo" alt="AORTA" class="h-8 w-auto justify-self-end" />
         </div>
 
         <p class="mt-4 text-sm leading-relaxed text-muted dark:text-slate-400">
@@ -147,16 +146,23 @@ const years = Array.from({ length: 90 }, (_, i) => new Date().getFullYear() - i)
                 </span>
             </label>
 
-            <label
-                class="block text-[13px] font-medium text-ink dark:text-white"
-            >
-                {{ t("fOtp") }}
-                <SecureInput
-                    class="mt-1.5"
-                    :placeholder="t('phOtp')"
-                    autocomplete="one-time-code"
-                />
-            </label>
+            <div>
+                <p class="text-[13px] font-medium text-ink dark:text-white">
+                    {{ t("fOtp") }}
+                </p>
+                <div class="mt-1.5 grid grid-cols-6 gap-2">
+                    <input
+                        v-for="i in 6"
+                        :key="i"
+                        type="text"
+                        inputmode="numeric"
+                        pattern="[0-9]*"
+                        maxlength="1"
+                        class="field text-center"
+                        :aria-label="`${t('fOtp')} ${i}`"
+                    />
+                </div>
+            </div>
 
             <label
                 class="block text-[13px] font-medium text-ink dark:text-white"
