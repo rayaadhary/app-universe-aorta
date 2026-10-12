@@ -1,41 +1,44 @@
 <script setup>
+import { computed, ref } from 'vue'
 import logo from '../assets/logo.png'
 import { t } from '../prefs'
 import PrefsBar from '../components/PrefsBar.vue'
 import SecureInput from '../components/SecureInput.vue'
 
 const years = Array.from({ length: 90 }, (_, i) => new Date().getFullYear() - i)
+
+const country = ref(t('countries')[0].v)
+const phoneSample = computed(
+    () => t('countries').find((c) => c.v === country.value)?.p ?? t('phPhone')
+)
 </script>
 
 <template>
     <main
         class="relative mx-auto flex min-h-dvh w-full max-w-md flex-col px-6 pt-12 pb-9 text-center"
     >
-        <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+        <div class="flex flex-wrap items-center justify-center gap-3">
             <svg
                 viewBox="0 0 24 24"
-                class="h-8 w-8 shrink-0 justify-self-start"
+                class="h-8 w-8 shrink-0 text-brand"
                 fill="none"
+                stroke="url(#brand)"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
                 aria-hidden="true"
             >
-                <circle cx="10" cy="7" r="4" fill="url(#brand)" />
-                <path
-                    d="M3 20c0-3.9 3.1-7 7-7s7 3.1 7 7H3Z"
-                    fill="url(#brand)"
-                />
-                <path
-                    d="M19 5v6M16 8h6"
-                    stroke="url(#brand)"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                />
+                <path d="M14 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="8" cy="7" r="4" />
+                <path d="M19 8v6" />
+                <path d="M22 11h-6" />
             </svg>
             <h1
                 class="text-center text-2xl font-bold text-ink dark:text-white"
             >
                 {{ t("registerHeading") }}
             </h1>
-            <img :src="logo" alt="AORTA" class="h-8 w-auto justify-self-end" />
+            <img :src="logo" alt="AORTA" class="h-8 w-auto" />
         </div>
 
         <p class="mt-4 text-sm leading-relaxed text-muted dark:text-slate-400">
@@ -127,7 +130,11 @@ const years = Array.from({ length: 90 }, (_, i) => new Date().getFullYear() - i)
                                 d="M12 3a14 14 0 0 1 3.5 9A14 14 0 0 1 12 21a14 14 0 0 1-3.5-9A14 14 0 0 1 12 3z"
                             />
                         </svg>
-                        <select class="field pr-6 pl-10">
+                        <select
+                            v-model="country"
+                            class="field pr-6 pl-10"
+                            :aria-label="t('fPhone')"
+                        >
                             <option
                                 v-for="c in t('countries')"
                                 :key="c.v"
@@ -140,7 +147,7 @@ const years = Array.from({ length: 90 }, (_, i) => new Date().getFullYear() - i)
                     <input
                         type="tel"
                         autocomplete="tel"
-                        :placeholder="t('phPhone')"
+                        :placeholder="phoneSample"
                         class="field px-4"
                     />
                 </span>
@@ -178,11 +185,6 @@ const years = Array.from({ length: 90 }, (_, i) => new Date().getFullYear() - i)
                 >
                     {{ t("helperPassword") }}
                 </span>
-                <span
-                    class="mt-1 block text-[11px] leading-snug text-muted dark:text-slate-400"
-                >
-                    {{ t("helperPassword2") }}
-                </span>
             </label>
 
             <label
@@ -194,6 +196,11 @@ const years = Array.from({ length: 90 }, (_, i) => new Date().getFullYear() - i)
                     :placeholder="t('phPasswordConfirm')"
                     autocomplete="new-password"
                 />
+                <span
+                    class="mt-1 block text-[11px] leading-snug text-muted dark:text-slate-400"
+                >
+                    {{ t("helperPassword2") }}
+                </span>
             </label>
 
             <button
