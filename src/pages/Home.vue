@@ -6,8 +6,9 @@ import PrefsBar from '../components/PrefsBar.vue'
 
 <template>
     <main
-        class="relative mx-auto flex min-h-dvh w-full max-w-md flex-col px-6 pt-14 pb-9 text-center"
+        class="relative mx-auto flex min-h-dvh w-full max-w-2xl flex-col px-6 py-8 text-center"
     >
+        <div class="flex flex-1 flex-col justify-center">
         <img :src="logo" alt="AORTA" class="mx-auto w-28" />
 
         <h1
@@ -30,7 +31,7 @@ import PrefsBar from '../components/PrefsBar.vue'
             class="flex flex-col justify-between rounded-2xl border border-slate-100 bg-white p-3.5 sm:p-5 text-left shadow-[0_16px_44px_-24px_rgba(70,105,160,0.55)] dark:border-white/10 dark:bg-white/5 dark:shadow-none"
           >
             <!-- Header: Flexbox (Ikon di kiri melingkupi 2 baris teks di kanan) -->
-            <div class="flex items-center gap-2.5 sm:gap-3.5">
+            <div class="flex flex-1 items-center gap-2.5 sm:gap-3.5">
               <!-- Icon (Kiri) -->
               <svg
                 viewBox="0 0 24 24"
@@ -53,7 +54,7 @@ import PrefsBar from '../components/PrefsBar.vue'
                 <h3 class="text-xs font-semibold text-ink dark:text-white sm:text-base leading-tight break-words">
                   {{ t("registerTitle") }}
                 </h3>
-                <p class="mt-0.5 text-[10px] sm:text-sm leading-snug text-muted dark:text-slate-400 break-words">
+                <p class="mt-0.5 text-[10px] sm:text-sm leading-snug text-muted dark:text-slate-400 break-words text-balance">
                   {{ t("registerDesc") }}
                 </p>
               </div>
@@ -73,7 +74,7 @@ import PrefsBar from '../components/PrefsBar.vue'
             class="flex flex-col justify-between rounded-2xl border border-slate-100 bg-white p-3.5 sm:p-5 text-left shadow-[0_16px_44px_-24px_rgba(70,105,160,0.55)] dark:border-white/10 dark:bg-white/5 dark:shadow-none"
           >
             <!-- Header: Flexbox (Ikon di kiri melingkupi 2 baris teks di kanan) -->
-            <div class="flex items-center gap-2.5 sm:gap-3.5">
+            <div class="flex flex-1 items-center gap-2.5 sm:gap-3.5">
               <!-- Icon (Kiri) -->
               <svg
                 viewBox="0 0 24 24"
@@ -95,7 +96,7 @@ import PrefsBar from '../components/PrefsBar.vue'
                 <h3 class="text-xs font-semibold text-ink dark:text-white sm:text-base leading-tight break-words">
                   {{ t("loginTitle") }}
                 </h3>
-                <p class="mt-0.5 text-[10px] sm:text-sm leading-snug text-muted dark:text-slate-400 break-words">
+                <p class="mt-0.5 text-[10px] sm:text-sm leading-snug text-muted dark:text-slate-400 break-words text-balance">
                   {{ t("loginDesc") }}
                 </p>
               </div>
@@ -111,6 +112,7 @@ import PrefsBar from '../components/PrefsBar.vue'
           </article>
         </div>
 
-        <PrefsBar justify="center" class="mt-auto pt-8" />
+        <PrefsBar justify="center" class="pt-8" />
+        </div>
     </main>
 </template>

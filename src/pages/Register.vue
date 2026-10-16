@@ -83,7 +83,7 @@ const phoneSample = computed(
                         class="field pr-8 pl-4"
                         :aria-label="t('phDay')"
                     >
-                        <option value="">{{ t("phDay") }}</option>
+                        <option value="" hidden>{{ t("phDay") }}</option>
                         <option v-for="d in 31" :key="d" :value="d">
                             {{ d }}
                         </option>
@@ -92,7 +92,7 @@ const phoneSample = computed(
                         class="field pr-8 pl-4"
                         :aria-label="t('phMonth')"
                     >
-                        <option value="">{{ t("phMonth") }}</option>
+                        <option value="" hidden>{{ t("phMonth") }}</option>
                         <option v-for="(m, i) in t('months')" :key="m" :value="i + 1">
                             {{ m }}
                         </option>
@@ -101,7 +101,7 @@ const phoneSample = computed(
                         class="field pr-8 pl-4"
                         :aria-label="t('phYear')"
                     >
-                        <option value="">{{ t("phYear") }}</option>
+                        <option value="" hidden>{{ t("phYear") }}</option>
                         <option v-for="y in years" :key="y" :value="y">
                             {{ y }}
                         </option>

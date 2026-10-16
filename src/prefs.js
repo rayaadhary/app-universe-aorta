@@ -4,10 +4,10 @@ const messages = {
   id: {
     tagline: 'Satu manusia. Satu kehidupan. Satu sistem.',
     welcome: 'Selamat datang',
-    registerTitle: 'Belum punya akun AORTA?',
+    registerTitle: 'Belum punya akun?',
     registerDesc: 'Daftar untuk mulai menggunakan.',
     registerCta: 'Daftar',
-    loginTitle: 'Sudah punya akun AORTA?',
+    loginTitle: 'Sudah punya akun?',
     loginDesc: 'Masuk untuk lanjut penggunaan.',
     loginCta: 'Masuk',
     language: 'Bahasa',
@@ -67,10 +67,10 @@ const messages = {
     tagline: 'One person. One life. One system.',
     welcome: 'Welcome',
     registerTitle: 'No account yet AORTA?',
-    registerDesc: 'Register to start using AORTA.',
+    registerDesc: 'Register to start.',
     registerCta: 'Register',
     loginTitle: 'Already have an account?',
-    loginDesc: 'Sign in to continue using AORTA.',
+    loginDesc: 'Sign in to continue.',
     loginCta: 'Sign in',
     language: 'Language',
     theme: 'Appearance',
@@ -126,8 +126,12 @@ const messages = {
   },
 }
 
+const deviceLocale = (navigator.language || '').toLowerCase().startsWith('id')
+  ? 'id'
+  : 'en'
+
 const prefs = reactive({
-  locale: localStorage.getItem('aorta.lang') || 'id',
+  locale: localStorage.getItem('aorta.lang') || deviceLocale,
   theme: localStorage.getItem('aorta.theme') || 'system',
 })
 
