@@ -34,6 +34,7 @@ defineProps({
                 :aria-label="t('language')"
                 class="cursor-pointer appearance-none bg-transparent pr-1 outline-none"
             >
+                <option value="">{{ t("languagePlaceholder") }}</option>
                 <option value="id">Bahasa Indonesia</option>
                 <option value="en">English</option>
             </select>

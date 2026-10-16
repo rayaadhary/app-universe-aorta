@@ -205,7 +205,7 @@ const phoneSample = computed(
 
             <button
                 type="button"
-                class="mt-2 w-full rounded-full bg-brand py-3 text-sm font-semibold tracking-wider text-white uppercase shadow-lg shadow-teal-500/20 transition hover:brightness-105 focus-visible:ring-2 focus-visible:ring-brand-to active:brightness-95"
+                class="mt-2 w-full rounded-full bg-brand py-3 text-sm font-semibold tracking-wider text-white shadow-lg shadow-teal-500/20 transition hover:brightness-105 focus-visible:ring-2 focus-visible:ring-brand-to active:brightness-95"
             >
                 {{ t("ctaContinue") }}
             </button>

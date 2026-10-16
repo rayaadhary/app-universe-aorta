@@ -11,6 +11,7 @@ const messages = {
     loginDesc: 'Masuk untuk lanjut penggunaan.',
     loginCta: 'Masuk',
     language: 'Bahasa',
+    languagePlaceholder: 'Pilih Bahasa',
     theme: 'Tema tampilan',
     themeLight: 'Terang',
     themeDark: 'Gelap',
@@ -73,6 +74,7 @@ const messages = {
     loginDesc: 'Sign in to continue.',
     loginCta: 'Sign in',
     language: 'Language',
+    languagePlaceholder: 'Choose Language',
     theme: 'Appearance',
     themeLight: 'Light',
     themeDark: 'Dark',
@@ -131,12 +133,12 @@ const deviceLocale = (navigator.language || '').toLowerCase().startsWith('id')
   : 'en'
 
 const prefs = reactive({
-  locale: localStorage.getItem('aorta.lang') || deviceLocale,
+  locale: localStorage.getItem('aorta.lang') || '',
   theme: localStorage.getItem('aorta.theme') || 'system',
 })
 
 function t(key) {
-  return messages[prefs.locale]?.[key] ?? messages.id[key] ?? key
+  return messages[prefs.locale || deviceLocale]?.[key] ?? messages.id[key] ?? key
 }
 
 function applyTheme() {
